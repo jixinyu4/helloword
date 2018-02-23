@@ -1,0 +1,35 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<script src="~/Scripts/react/react.js"></script>
+<script src="~/Scripts/react/react-dom.js"></script>
+<script src="~/Scripts/react/browser.min.js"></script>
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index2</title>
+</head>
+<body>
+    <div id="example"></div>
+    <script type="text/babel">
+          var HelloMessage = React.createClass({
+        render: function() {
+          return <h1>Hello {this.props.name}</h1>;
+        }
+      });
+
+
+        ReactDOM.render(
+        <HelloMessage name="John" />,
+        document.getElementById('example')
+        );
+    </script>
+</body>
+</html>
+
+
