@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+var LikeButton = React.createClass({
+   @*初始化状态***************************************end*@
+  getInitialState: function() {
+    return {liked: false};
+  },
+  @* handleClick方法 ***************************************end*@
+  handleClick: function(event) {
+    this.setState({liked: !this.state.liked});
+  },
+    @*返回页面***************************************end*@
+  render: function() {
+    var text = this.state.liked ? 'like' : 'haven\'t liked';
+    return (
+      <p onClick={this.handleClick}>   @*调用 handleClick 事件 ***************************************end*@
+        You {text} this. Click to toggle.
+      </p>
+    );
+  }
+});
+
+ReactDOM.render(
+  <LikeButton />,
+  document.getElementById('example')
+);
+    </script>
+  </body>
+</html>
+
